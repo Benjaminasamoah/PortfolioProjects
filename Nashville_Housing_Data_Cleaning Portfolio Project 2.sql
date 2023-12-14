@@ -10,7 +10,6 @@ Add SaleDateConverted Date;
 Update Nashville_Housing
 SET SaleDateConverted = CONVERT(Date,SaleDate)
 
-
 Select SaleDateConverted,CONVERT(Date,SaleDate) 
 From [Portfolio Project 2].dbo.Nashville_Housing
 
@@ -82,10 +81,8 @@ Add OwnerSplitState  Nvarchar(255) ;
 Update Nashville_Housing
 SET OwnerSplitState  = PARSENAME(REPLACE(OwnerAddress,',','.'),1)
 
-/*
-Select *
-From [Portfolio Project 2].dbo.Nashville_Housing
-*/
+--Select *  From [Portfolio Project 2].dbo.Nashville_Housing
+
 
 --Change Y and N to Yes and NO in "Sold as Vacant"field
 
@@ -131,6 +128,7 @@ From ROwNumCTE
 Where row_num >1
 Order by PropertyAddress
 
+	
 --Remove Duplicates
 
 WITH RowNumCTE AS(
